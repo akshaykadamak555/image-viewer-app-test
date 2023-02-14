@@ -1,0 +1,32 @@
+<mat-sidenav-container class="sidenav-container" autosize>
+  <mat-sidenav-content #drawer mode="side">
+    <div class="image-viewer-cotainer">
+      <mat-card>
+        <mat-card-content>
+          <div class="image-container">
+            <img
+              [src]="imageData.imagePath"
+              [alt]="imageData.name"
+              [height]="imageData.height"
+              [width]="imageData.width"
+            />
+            <div class="image-container-field"><b>Name:</b> {{ imageData.name }}</div>
+            <div class="image-container-field"><b>Caption:</b> {{ imageData.caption }}</div>
+            <button
+              mat-raised-button
+              color="primary"
+              class="view-details-button"
+              (click)="sidenav.toggle()"
+            >
+              View Details
+            </button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-sidenav-content>
+
+  <mat-sidenav #sidenav mode="over" position="end">
+    <app-sidebar></app-sidebar>
+  </mat-sidenav>
+</mat-sidenav-container>

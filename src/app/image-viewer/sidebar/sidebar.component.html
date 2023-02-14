@@ -1,0 +1,28 @@
+<div class="sidebar-container">
+  <h2 class="title">Image Viewer Details</h2>
+  <img
+    [src]="imageData.imagePath"
+    [alt]="imageData.name"
+    [height]="imageData.height"
+    [width]="imageData.width"
+  />
+  <mat-form-field class="image-container-field" appearance="outline">
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="imageData.name">
+  </mat-form-field>
+  <mat-form-field class="image-container-field" appearance="outline">
+    <mat-label>Caption</mat-label>
+    <input matInput [(ngModel)]="imageData.caption">
+  </mat-form-field>
+
+  <div class="image-container-field"><b>Size:</b> {{ imageData.size }}</div>
+  <div class="image-container-field"><b>Height:</b> {{ imageData.height }}</div>
+  <div class="image-container-field"><b>Width:</b> {{ imageData.width }}</div>
+
+  <div class="button-container">
+    <button mat-raised-button class="close-button" color="secondary" (click)="onClose()">Close</button>
+    <button mat-raised-button color="primary" (click)="onSave()">Save</button>
+  </div>
+</div>
+
+
